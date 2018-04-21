@@ -1,0 +1,56 @@
+@import '../../../styles.scss';
+
+:host{
+    line-height: 30px; 
+    vertical-align: middle;
+
+    position: fixed;
+    display: inline-block;
+
+    white-space: nowrap;
+    z-index: 30;
+    top:calc(16% + 450px);
+    left:0;
+    width:calc(24% - 20px);
+    border-radius:0 0 15px 0;
+    text-align: center;
+    height:30px;
+    padding: 10px;
+    
+    font-size:26px;
+    background-color: $color_info;
+    color:white;
+    cursor: pointer;
+
+    // .moreThan9{
+    //     font-size:12px;
+    //     position: absolute;
+    //     left:55.5%;
+    //     top:0%;
+
+    //     &--hidden{
+    //         display: none;
+    //     }
+    // }
+    .newAmount{
+        position: absolute;
+        width: 20px;
+        height: 0px;
+        left:52%;
+        top:5%;
+        background-color: $color_error;
+        //border:1px solid white;
+        padding: 10px 0 10px 0;
+        font-size: 14px;
+        border-radius: 100px;
+        line-height: 0px;
+        text-align: center;
+        &--hidden{
+            display: none;
+        }
+    }
+    .refresh{
+        margin-left:10px;
+        cursor: pointer;
+    }
+}

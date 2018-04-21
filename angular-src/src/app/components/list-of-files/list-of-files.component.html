@@ -1,0 +1,14 @@
+<div class="file" *ngFor="let file of files">
+    <div class="file__downloadCount">{{file.shortenedDownloadCount}}</div>
+    <a class="file__downloadLink"  href="{{file.path}}" download="{{file.name}}">
+        <img class="file__downloadLink__image" src="assets/images/download.png">
+    </a>
+    <div class="file__size">{{file.shortenedSize}}</div>
+    <img class="file__extensionImage" src="{{file.extensionImageSrc}}" alt="default file ext">
+    <div class="file__fileName">{{file.name}}</div>
+    <div class="file__whenAdded">{{file.dateString}}</div> 
+    <div class="file__tags" >
+        <span class="file__tags__tag" *ngFor="let tag of file.tags; let i = index">#{{tag}} <span *ngIf="i < file.tags.length - 1">,</span> </span>  
+    </div>
+    <a class="file__link" href='{{file.path}}'></a>
+</div>

@@ -1,0 +1,55 @@
+@mixin noselect($value) {
+  -webkit-touch-callout: $value; /* iOS Safari */
+    -webkit-user-select: $value; /* Safari */
+       -moz-user-select: $value; /* Firefox */
+        -ms-user-select: $value; /* Internet Explorer/Edge */
+            user-select: $value; /* Non-prefixed version, currently  supported by Chrome and Opera */                           
+}
+@mixin boxShadow($value){
+  -webkit-box-shadow: $value;
+  -moz-box-shadow: $value;
+  box-shadow: $value;
+}
+//--------- Colors: --------------------
+$nodeColorLight:rgb(131,205,41);
+
+$aquaColor1:#10B3AB;
+$aquaColor2:#29CCC4; 
+$aquaColor3:#43E6DE;
+
+$mainThemeColor1:#000000;
+$mainThemeColor2:#222222;
+//$mainThemeColor2:pink;
+$mainThemeColor3:#444444;
+$mainThemeColor4:#666666;
+
+$color_success: #6BBA05; //#447604;
+$color_info: hsl(226, 40%, 56%);
+$color_yellow: hsl(49, 80%, 62%);
+$color_error: rgb(194, 0, 0);
+
+// new color names: (not used yet)
+
+// $color_theme_1: #83CD29;
+// $color_theme_2: #29CCC4;
+// $color_theme_3: #48ACF0;
+// $color_theme_4: #594236;
+// $color_theme_5: #6F584B;
+
+// $color_black_1:#000000;
+// $color_black_2:#222222;
+// $color_black_3:#444444;
+// $color_black_4:#666666;
+
+html
+{
+    font-size:16px;
+}
+body
+{
+    background-color:$mainThemeColor1;
+    font-family: Roboto;
+}
+*{
+    margin:0;
+}

@@ -1,0 +1,12 @@
+
+<div class="collapseButton" (click)="toggleVisibility()">Search menu</div>
+<div class="searchByNameLabel">Search by name</div>
+<input class="searchByNameInput" type="text" placeholder="Readme.txt">
+<div class="searchByTagsLabel">Search by tags</div>
+<input class="searchByTagsInput" type="text" placeholder="tag1, tag2" (input)="showTagsSuggestion($event.target.value)">
+<!-- <div class="sortingLabel">Sorting</div>
+<div class="sortingButtons">
+    <button class="sortingButtons__button sortingButtons__button--active">Sort by date</button>
+    <button class="sortingButtons__button">Sort by name</button>
+    <button class="sortingButtons__button">Sort by downloads</button>
+</div> -->

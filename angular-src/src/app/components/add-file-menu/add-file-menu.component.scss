@@ -1,0 +1,221 @@
+@import '../../../styles.scss';
+
+@keyframes animate-stripes
+{
+    from { background-position: 0 0; }
+    to   { background-position: -300px 0 }
+}
+
+:host
+{
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    top:16%;
+    right:0;
+    width:24%;
+    height:500px;
+    background:$mainThemeColor2;
+    border-radius:15px 0 0 15px;
+    .addTagsLabel,.addTagsInput{
+        padding-left:1vw;
+    }
+    .addTagsLabel{
+        border-radius: 15px 0 0 0;
+        background: $nodeColorLight;
+        font-size: 24px;
+        padding-bottom: 5px;
+        padding-top: 5px;
+        &--hidden{
+            display: none;
+        }
+    }
+    .addTagsInput{
+        background:$mainThemeColor3;
+        color:white;
+        box-shadow: none;
+        box-sizing: border-box;
+        font-size:20px;
+        border:none;
+        width:100%;
+        height:48px;
+        left:-1vw;
+        outline: none;
+        &--hidden{
+            display: none;
+        }
+    }
+    .addTagsInputHelper{
+        position: absolute;
+        top:43px;
+        right:10px;
+        font-size:40px;
+    }
+    .errorMessage{
+        font-size:24px;
+        color:$color_error;
+        text-overflow:  ellipsis;
+        position: absolute;
+        align-self: center;
+        bottom: 12px;
+        max-width: 100%;
+        padding:5px;
+        overflow: hidden;
+        text-align: center;
+        &--hidden{
+            display: none;
+        }
+    }
+    .messageBox{
+        position: absolute;
+        display: block;
+        top:80px;
+        right:50px;
+        transition-duration: 0.3s;
+        opacity: 0;
+        padding: 5px;
+        max-width:200px;
+        @include noselect(none);
+        cursor: default;
+        border-radius:12px;
+        padding:10px 10px 10px 10px;
+        background-color: hsla(207, 79%, 87%, 1);//rgba(244,244,244,0.99);
+        border: 4px solid hsl(207, 90%, 67%);
+        &--active{
+            opacity: 1;
+        }
+        &--displayNone{
+            display: none;
+        }
+    }
+    .uploadButton{
+        position: absolute;
+        bottom:0;
+        background-color:$nodeColorLight;
+        border:none;
+        font-size:24px;
+        width:80%;
+        height:5vh;
+        cursor: pointer;
+        align-self: center;
+        align-items:flex-end;
+        &--hidden{
+           display: none;
+        }
+    }
+    .dragAndDrop{
+        opacity:0;
+        z-index:4;
+        position: absolute;
+        left:50%;
+        top:60%;
+        transform: translate(-50%,-50%);
+        color: $mainThemeColor2;
+        border:3px dashed $aquaColor2;
+        width:163px;
+        align-self: center;
+        height:163px;
+        cursor: pointer;
+    }
+    .dragAndDropMessage{
+        position: absolute;
+        background:$mainThemeColor2;
+        left:50%;
+        top:60%;
+        transform: translate(-50%,-50%);
+        color: $aquaColor2;
+        border:3px dashed $aquaColor2;
+        text-align:center;
+        width:150px;
+        padding:10px;
+        align-self: center;
+        height:150px;
+    }
+    .saveAsInput{
+        background:$mainThemeColor3;
+        color:white;
+        box-shadow: none;
+        box-sizing: border-box;
+        font-size:20px;
+        border:none;
+        width:100%;
+        padding-left:1vw;
+        height:48px;
+        left:-1vw;
+        outline: none;
+        &--hidden{
+            display: none;
+        }
+    }
+    .saveAsLabel{
+        background:$nodeColorLight;
+        font-size:24px;
+        padding-left: 1vw;
+        padding-bottom: 5px;
+        padding-top: 5px;
+        &--hidden{
+            display: none;
+        }
+    }
+    .successMessage{
+        font-size:24px;
+        color:$color_success;
+        position: absolute;
+        align-self: center;
+        bottom: 12px;
+        text-align: center;
+        &--hidden{
+            display: none;
+        }
+    }
+
+    .loadingBar
+    {
+        position: absolute;
+        bottom:2.5vh;
+        left:50%;
+        transform: translate(-50%, 50%);
+        font-family: Roboto, Calibri;
+        font-size:15px;
+        text-align: center;
+        color:black;
+        width:200px;
+        height:20px;
+        border-radius: 100px;
+        border: 3px solid black;
+        background-color:gray;
+        animation: animate-stripes 5s linear infinite;
+        background-image:
+            repeating-linear-gradient(
+                135deg,
+                /*transparent,
+                transparent 33%,
+                rgba(0, 0, 0, 0.1) 33%,
+                rgba(0, 0, 0, 0.1) 66%,
+                transparent 66%*/
+                transparent,
+                transparent 15px,
+                rgba(0, 0, 0, 0.1) 15px,
+                rgba(0, 0, 0, 0.1) 30px,
+                transparent 30px
+            );
+        background-size:200%, 100%;
+    }
+    .progress
+    {
+        width:50%;
+        position: absolute;
+        height:calc(100%);
+        background-color:rgb(97, 224, 33);
+        border-radius:100px;
+    }
+    .loadingMessage
+    {
+        display: block;
+        position: absolute;
+        left:50%;
+        top:50%;
+        transform: translate(-50%,-50%);
+        z-index:500;
+    }
+}

@@ -1,0 +1,35 @@
+<div class="addTagsLabel" #addTagsLabel>Add tags</div>
+<div>
+    <input type="text" class="addTagsInput" placeholder="tag1, tag2" #tagInput (keydown)="tagInputKeydown($event)">
+    <i class="fa fa-question-circle addTagsInputHelper" aria-hidden="true" (mouseover)='onAddTagsInputHelperMouseOver()' (mouseleave)="onAddTagsInputHelperMouseLeave()"></i>
+    <div class= "messageBox messageBox--displayNone" #tagHintMessageBox>
+        Tags can contain only:<br>
+        - small letters: [a-z],<br>
+        - numbers: [0-9]
+    </div>
+</div>
+
+<input type="file" class="dragAndDrop" (change)="onDragAndDropChange($event)" #fileInput>
+
+<div class="saveAsLabel" #saveAsLabel>Save as:</div>
+<input type="text" type="text" class="saveAsInput" #saveAsInput>
+
+<!-- <div class="loadingBar loadingBar">
+    <span class="loadingBar__percentValue">50%</span>
+    <div class="loadingBar__inside"></div>
+</div> -->
+<!-- <app-progress-bar class="progressBar"></app-progress-bar> -->
+
+<div class="loadingBar" *ngIf="isUploading">
+  <div class="progress" #progress [style.width.%]="loadedPercentage"></div>
+  <span class="loadingMessage" #loadingMessage>{{loadedPercentage}}%</span>
+</div>
+
+<p class="dragAndDropMessage" #dragAndDropMessage>
+    Drag and drop<br>
+    (or click)
+</p>
+
+<button class="uploadButton" (click)="upload()" #uploadButton>Upload</button>
+<span class="successMessage successMessage--hidden" #successMessage><i class="fa fa-check" aria-hidden="true"></i> Finished uploading!</span>
+<span class="errorMessage errorMessage--hidden" #uploadError><i class="fa fa-exclamation-circle" aria-hidden="true"></i> <span #uploadErrorMessage></span></span>

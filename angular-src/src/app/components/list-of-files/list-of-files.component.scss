@@ -1,0 +1,150 @@
+@import '../../../styles.scss';
+
+:host{
+    min-width:50%;
+    font-size:1vw;
+    min-height:600px;
+    padding-top:calc(100vh/51);
+    padding-bottom:5px;
+    position: absolute;
+    top:16%;
+    left:50%;
+    transform: translateX(-50%);
+    background-color:$mainThemeColor2;
+    border-radius:15px;
+    display: flex;
+    flex-direction: column;
+    .file{
+        border:1px $nodeColorLight solid;
+        border-radius:12px;
+        height:50px;
+        width:100%*11/12;
+        align-self: center;
+        padding: 5px;
+        margin-bottom:5px;
+        position: relative;
+        overflow:hidden;
+        background-color: $mainThemeColor4;
+        &__link{
+            z-index:1;
+            display: block;
+            position: absolute;
+            //background:$red;
+            top:0;
+            left:0;
+            border-radius:12px;
+            height:50px;
+            width:100%;
+            padding: 5px;
+            overflow:hidden;
+        }
+        &__downloadCount{
+            display: block;
+            position: absolute;
+            //z-index:2;
+            margin-left:5px;
+            top:50%;
+            transform: translateY(-50%);
+            color:rgb(170,170,170);
+        }
+        &__downloadLink{
+            z-index:2;
+            display: block;
+            position: absolute;
+            top:50%;
+            transform: translateY(-50%);
+            left:7%;
+            width:2.5vw;
+            height:2.5vw;
+            &__image{
+                position: absolute;
+                left:0;
+                top:0;
+                width:2.5vw;
+                height:2.5vw;
+                transition-duration: 0.3s;
+                &:hover{
+                    @include boxShadow(0px 0px 1px 1px rgba(0,0,0,0.75));
+                }
+            }
+        }
+        &__size{
+            position: absolute;
+            top:50%;
+            transform: translateY(-50%);
+            left:13.5%;
+            color:rgb(170,170,170);
+        }
+        &__extensionImage{
+            width:25px;
+            height:25px;
+            position: absolute;
+            left:80%;
+            top:50%;
+            transform: translateY(-50%);
+        }
+        &__fileName{
+            display: inline;
+            position: absolute;
+            top:40%;
+            left:50%;
+            transform: translate(-50%,-50%);
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+            max-width:50%;
+            color:rgb(255,255,255);
+        }
+        &__whenAdded{
+            display: inline;
+            position: absolute;
+            top:50%;
+            right:3%;
+            transform: translateY(-50%);
+            color:rgb(170,170,170);
+        }
+        &__tags{
+            z-index:2;
+            display: inline;
+            position: absolute;
+            top:70%;
+            left:50%;
+            transform: translate(-50%,-50%);
+            max-width: 50%;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            color:$aquaColor1;
+            cursor:pointer;
+            &__tag{
+                &:hover{
+                    color:$aquaColor2;
+                }
+            } 
+        }
+    }
+    .newFileNotifier{
+        position: fixed;
+        background-color: $color_info;
+        color: white;
+        width:100%;
+        height:100px;
+        z-index: 1000;
+        top:0;
+        left:0;
+        &--hidden{
+            //display: none;
+        }
+    }
+}
+
+// 0-999px
+@media (max-width:999px){
+    :host{
+    }
+}
+// +1000px
+@media (min-width:1000px){
+    :host{
+    }
+}

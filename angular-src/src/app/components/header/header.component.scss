@@ -1,0 +1,42 @@
+@import '../../../styles.scss';
+
+:host{
+    font-family: Calibri;
+    position: fixed;
+    z-index:5;
+    top:0;
+    left:0;
+    height: calc(15%);
+    width:100%;
+    background-color: $mainThemeColor2;
+    border-bottom: 1vh solid rgb(0,0,0);
+    color:white;
+    .--text-aqua{
+        color:$aquaColor1;
+    }
+    .title{
+        position: absolute;
+        display: block;
+        left:50%;
+        top:50%;
+        transform: translate(-50%,-50%);
+        .logo{
+            width:20.9px * 2;
+            height:48px * 2; 
+        }
+    }
+}
+// 0-999px
+@media (max-width:999px){
+    :host{
+        font-size:32px;
+        height: 7%;
+    }
+}
+// 1000px+
+@media (min-width:1000px){
+    :host{
+        font-size:64px;
+        height: calc(15%);
+    }
+}
