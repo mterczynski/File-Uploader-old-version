@@ -1,9 +1,5 @@
 ## Installation
 
-- ### Clone repository:
-
-    git clone https://gitlab.com/mterczynski/FileUploader.git
-
 - ### Install modules:
  
 ```
